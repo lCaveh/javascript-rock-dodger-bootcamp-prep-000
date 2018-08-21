@@ -86,7 +86,7 @@ function createRock(x) {
       GAME.removeChild(rock);
     }
     if (checkCollision(rock)) {
-     endGame();
+     return endGame();
     }
    }
  
