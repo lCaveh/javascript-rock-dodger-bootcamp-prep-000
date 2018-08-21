@@ -84,7 +84,8 @@ function createRock(x) {
       window.requestAnimationFrame(moveRock);
     } else if (top >GAME_HEIGHT-20) {
       GAME.removeChild(rock);
-    } else if (checkCollision(rock)) {
+    }
+    if (checkCollision(rock)) {
      endGame();
      }
    }
