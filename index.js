@@ -127,7 +127,7 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
   for (let i=0;i<ROCKS.lenght;i++) {
-    GAME.removeChild(ROCKS[i]);
+    GAME.remove(ROCKS[i]);
   }
 }
 
