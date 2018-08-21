@@ -10,8 +10,6 @@ const START = document.getElementById('start');
 var gameInterval = null;
 
 function checkCollision(rock) {
-  // implement me!
-  // use the comments below to guide you!
   const top = positionToInteger(rock.style.top);
   if (top > 360) {
     const dodgerLeftEdge = positionToInteger(DODGER.style.left);
