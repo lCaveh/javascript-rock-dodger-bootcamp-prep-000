@@ -86,6 +86,7 @@ function createRock(x) {
       GAME.removeChild(rock);
     }
     if (checkCollision(rock)) {
+      console.log('inside function createRock')
      return endGame();
     }
    }
