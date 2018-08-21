@@ -1,32 +1,20 @@
+const DODGER = document.getElementById('dodger');
+const GAME = document.getElementById('game');
+const GAME_HEIGHT = 400;
+const GAME_WIDTH = 400;
+const LEFT_ARROW = 37;
+const RIGHT_ARROW = 39;
+const ROCKS = [];
+const START = document.getElementById('start');
 
-const DODGER = document.getElementById('dodger')
-const GAME = document.getElementById('game')
-const GAME_HEIGHT = 400
-const GAME_WIDTH = 400
-const LEFT_ARROW = 37 // use e.which!
-const RIGHT_ARROW = 39 // use e.which!
-const ROCKS = []
-const START = document.getElementById('start')
-
-var gameInterval = null
-
-/**
- * Be aware of what's above this line,
- * but all of your work should happen below.
- */
+var gameInterval = null;
 
 function checkCollision(rock) {
   // implement me!
   // use the comments below to guide you!
-  const top = positionToInteger(rock.style.top)
-
-  // rocks are 20px high
-  // DODGER is 20px high
-  // GAME_HEIGHT - 20 - 20 = 360px;
+  const top = positionToInteger(rock.style.top);
   if (top > 360) {
-    const dodgerLeftEdge = positionToInteger(DODGER.style.left)
-
-    // FIXME: The DODGER is 40 pixels wide -- how do we get the right edge?
+    const dodgerLeftEdge = positionToInteger(DODGER.style.left);
     const dodgerRightEdge = positionToInteger(DODGER.style.left)+ 40;
 
     const rockLeftEdge = positionToInteger(rock.style.left)
