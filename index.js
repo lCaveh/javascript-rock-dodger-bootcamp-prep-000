@@ -49,12 +49,6 @@ function createRock(x) {
   return rock;
 }
 
-/**
- * End the game by clearing `gameInterval`,
- * removing all ROCKS from the DOM,
- * and removing the `moveDodger` event listener.
- * Finally, alert "YOU LOSE!" to the player.
- */
 function endGame() {
   clearInterval(gameInterval);
   for (let i=0;i<ROCKS.length;i++) {
@@ -73,54 +67,29 @@ function moveDodger(e) {
     e.stopPropagation();
     moveDodgerRight();
   }
-  /**
-   * This function should call `moveDodgerLeft()`
-   * if the left arrow is pressed and `moveDodgerRight()`
-   * if the right arrow is pressed. (Check the constants
-   * we've declared for you above.)
-   * And be sure to use the functions declared below!
-   */
 }
 
 function moveDodgerLeft() {
-  // implement me!
-  
   var left = positionToInteger(dodger.style.left, 10);
- 
   if (left > 0) {
     dodger.style.left = `${left - 4}px`;
   }
-  /**
-   * This function should move DODGER to the left
-   * (mabye 4 pixels?). Use window.requestAnimationFrame()!
-   */
 }
 
 function moveDodgerRight() {
-  // implement me!
   var right = positionToInteger(dodger.style.left, 10);
- 
   if (right < GAME_WIDTH-40) {
     dodger.style.left = `${right + 4}px`;
   }
-  /**
-   * This function should move DODGER to the right
-   * (mabye 4 pixels?). Use window.requestAnimationFrame()!
-   */
 }
 
-/**
- * @param {string} p The position property
- * @returns {number} The position as an integer (without 'px')
- */
 function positionToInteger(p) {
-  return parseInt(p.split('px')[0]) || 0
+  return parseInt(p.split('px')[0]) || 0;
 }
 
 function start() {
-  window.addEventListener('keydown', moveDodger)
-
-  START.style.display = 'none'
+  window.addEventListener('keydown', moveDodger);
+  START.style.display = 'none';
 
   gameInterval = setInterval(function() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)));
