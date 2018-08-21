@@ -86,7 +86,6 @@ function createRock(x) {
       GAME.removeChild(rock);
     }
     if (checkCollision(rock)) {
-      console.log('inside function createRock')
      return endGame();
     }
    }
@@ -128,6 +127,7 @@ function createRock(x) {
 function endGame() {
   clearInterval(gameInterval);
   for (let i=0;i<ROCKS.lenght;i++) {
+    console.log('inside function endGame')
     ROCKS[i].remove();
   }
 }
